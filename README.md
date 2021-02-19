@@ -28,7 +28,8 @@ The model was trained for 30 epochs where one epoch refers to one iteration over
 
 
 # Multinomial Logistics Regression - Data Preprocessing and Augmentation
-Logistic regression can be thought of as a neural network without a hidden layer, where the output layer directly connects with the input layer8.
+
+Logistic regression can be thought of as a neural network without a hidden layer, where the output layer directly connects with the input layer.
 In order to build my model , I used a sequential model ( Keras) that I built for the CNN model and removed the inner hidden layers . The final logistic regression sequential model only consisted of a flatten layer , dense layer and a final softmax activation function layer . The output was similar to a multinomial logistic regression model because of the softmax function . 
 
 
