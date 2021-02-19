@@ -8,15 +8,15 @@
 Convolutional Neural network(CNN) and Logistic Regression multi-class models that can diagnose Pneumonia,COVID-19 and healthy patients from X-Ray images with 86% accuracy
 
 Database :https://www.kaggle.com/tawsifurrahman/covid19-radiography-database
-At the time I accessed the database- there was 219 COVID images, 1341 Normal Images and 1345 Pneumonia X-Ray images of size 1024x1024.
+At the time I accessed the database- there were 219 COVID images, 1341 Normal Images and 1345 Pneumonia X-Ray images of size 1024x1024.
 
 
 Randomly, 70% of all Covid-19, Pneumonia and normal images were placed in the training folder , 25 % of all images in the validation set and the remaining 5% in the testing folder. 
 
-These images were inputted into the models and the output was the label predicted by the models along with metrics -accuracy , precision, recall and  confusion matrix
+These images were inputted into the models and the output was the label predicted by the models along with metrics - Accuracy , Precision, Recall and  Confusion Matrix
 
 
-# CNN model and Data Augmentation
+# CNN model- Data Augmentation
 
 Data augmentation was done for the training and testing data in the form of sheer rangle(0.2), zoom range(0.2) and horizontal flip so the model wouldn’t see the same images over and over again . This is essentially done to avoid overfitting .
 The CNN model was trained using batch size of 32 and steps per epoch = 62 (It’s common practice to take steps per epoch = training sample set/batch size)
