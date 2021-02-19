@@ -5,38 +5,36 @@
 
 
 
-Convolutional Neural network and Logistic Regression multi-class models that can diagnose Pneumonia,COVID-19 and healthy patients from Xray images with 86% accuracy
+Convolutional Neural network(CNN) and Logistic Regression multi-class models that can diagnose Pneumonia,COVID-19 and healthy patients from X-Ray images with 86% accuracy
 
 Database :https://www.kaggle.com/tawsifurrahman/covid19-radiography-database
-At the time I accessed the database- there was 219 COVID images, 1341 Normal Images and 1345 Pneumonia images of size 1024x1024.
+At the time I accessed the database- there was 219 COVID images, 1341 Normal Images and 1345 Pneumonia X-Ray images of size 1024x1024.
 
 
 Randomly, 70% of all Covid-19, Pneumonia and normal images were placed in the training folder , 25 % of all images in the validation set and the remaining 5% in the testing folder. 
 
-These images were inputted into the models and the output was the label predicted by the model along with metrics .
+These images were inputted into the models and the output was the label predicted by the models along with metrics -accuracy , precision, recall and  confusion matrix
 
 
-
-#Data Augmentation
+# CNN model and Data Augmentation
 
 Data augmentation was done for the training and testing data in the form of sheer rangle(0.2), zoom range(0.2) and horizontal flip so the model wouldn’t see the same images over and over again . This is essentially done to avoid overfitting .
 The CNN model was trained using batch size of 32 and steps per epoch = 62 (It’s common practice to take steps per epoch = training sample set/batch size)
 
 The model was trained for 30 epochs where one epoch refers to one iteration over all of the training data.
 
+<img width="603" alt="Screen Shot 2021-02-18 at 9 54 28 PM" src="https://user-images.githubusercontent.com/77410526/108451160-58495980-7234-11eb-851e-9a1602d4fffb.png">
 
 
-For the multinomial logistics regression I decided to use a slightly different approach .
 
+# Multinomial Logistics Regression - Data Preprocessing and Augmentation
 Logistic regression can be thought of as a neural network without a hidden layer, where the output layer directly connects with the input layer8.
-In order to build my model , I used a sequential model ( Keras) that I built for the CNN model and removed the inner hidden layers . The final logistic regression sequential model only consisted of a flatten layer , dense layer and a final softmax activation function layer . The output was similar to a multinomial logistic regression model because of the softmax function . The total trainable parameters learned were 2,250,003.
+In order to build my model , I used a sequential model ( Keras) that I built for the CNN model and removed the inner hidden layers . The final logistic regression sequential model only consisted of a flatten layer , dense layer and a final softmax activation function layer . The output was similar to a multinomial logistic regression model because of the softmax function . 
 
-
-Data Preprocessing and Augmentation
 
 Like for the CNN model , here too I used 500x500 sized images as input along with similar data augmentation.Keras was used to build the model as opposed to the traditional SciKit-Learn approach as it’s less memory intensive. It would be very difficult to run a full training process on input images of 500X500 with a batch size of 32 as everything is stored in memory(in case of SciKit-Learn)which is not true in case of Keras. An alternative might be using a smaller image size as input and increasing batch size.
 
-
+<img width="871" alt="Screen Shot 2021-02-18 at 9 54 36 PM" src="https://user-images.githubusercontent.com/77410526/108451169-5da6a400-7234-11eb-902c-30e419fdd68e.png">
 
 # DISCUSSION
 
@@ -60,4 +58,4 @@ For Logistic Regression , if Scikit-Learn is to be used then the model may be im
 
  
 # Conclusion
-In this project , I showed the multiclass X ray classification to detect Pneumonia and Covid-19 using CNN and a Logistic Regression Model.
+In this project , I showed the multiclass X-Ray classification to detect Pneumonia Covid-19, healthy patients  using CNN and a Logistic Regression Models.
