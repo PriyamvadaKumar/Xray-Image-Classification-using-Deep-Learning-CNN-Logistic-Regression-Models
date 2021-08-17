@@ -41,7 +41,7 @@ Like for the CNN model , here too I used 500x500 sized images as input along wit
 
 In the CNN model ,ADAM optimizer with a default learning rate of 0.001 showed the best performance on the unseen test data images along with good training and validation curve convergence . It was able to accurately predict most images while keeping the false negatives to a minimum . As the task is to label disease classes , it’s important to keep true positive high while keeping true negatives slow, implying a high recall of 0.87. Next best model performance was with a learning rate of 0.01 . 
 
-SGD optimizer ,overall was not able to perform as well as the ADAM optimizer and could not generalize well over unseen X ray data given the training epochs. SGD tends to fluctuate between local minimas due to randomness in its descent, as mentioned earlier. So it may be trained for a period>30 epochs to possibly get better results .
+SGD optimizer ,overall was not able to perform as well as the ADAM optimizer and could not generalize well over unseen X ray data given the training epochs. SGD tends to fluctuate between local minimas due to randomness in its descent. So it may be trained for a period > 30 epochs to possibly get better results .
 
 Validation curves showed higher accuracy and lower loss compared to the training curves as data augmentation was only applied to the training set . This makes it harder for the model to learn the training data , leading to the lower accuracy and higher loss.
 
